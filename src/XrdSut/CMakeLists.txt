@@ -1,4 +1,4 @@
-target_sources(XrdUtils
+target_sources(XrdUtils-objects
   PRIVATE
     XrdSutAux.cc         XrdSutAux.hh
     XrdSutBuckList.cc    XrdSutBuckList.hh

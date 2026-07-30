@@ -79,6 +79,12 @@ if(NOT XRDCL_ONLY)
     ${CMAKE_THREAD_LIBS_INIT}
   )
 
+add_executable(xrdadler32_static Xrdadler32_static.cc)
+target_link_libraries(xrdadler32_static
+    -Wl,-Bstatic XrdUtils-static
+    -Wl,-Bdynamic c stdc++ pthread dl z
+)
+
   add_executable(xrdcks XrdCks.cc)
   target_link_libraries(xrdcks XrdUtils)
 

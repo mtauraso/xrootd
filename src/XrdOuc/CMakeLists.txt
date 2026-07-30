@@ -5,7 +5,7 @@ if(nlohmann_json_FOUND)
   target_compile_definitions(XrdUtils PUBLIC USE_SYSTEM_NLOHMANN_JSON)
 endif()
 
-target_sources(XrdUtils
+target_sources(XrdUtils-objects
   PRIVATE
     XrdOuca2x.cc         XrdOuca2x.hh
     XrdOucArgs.cc        XrdOucArgs.hh

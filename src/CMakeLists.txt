@@ -21,7 +21,9 @@ endif()
 
 include( XrdHeaders )
 
-add_library(XrdUtils SHARED)
+add_library(XrdUtils-objects OBJECT)
+add_library(XrdUtils SHARED $<TARGET_OBJECTS:XrdUtils-objects>)
+add_library(XrdUtils-static STATIC $<TARGET_OBJECTS:XrdUtils-objects>)
 
 set_target_properties(XrdUtils
   PROPERTIES BUILD_RPATH $ORIGIN

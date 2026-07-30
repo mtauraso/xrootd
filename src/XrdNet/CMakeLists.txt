@@ -1,4 +1,4 @@
-target_sources(XrdUtils
+target_sources(XrdUtils-objects
   PRIVATE
     XrdNet.cc           XrdNet.hh
                         XrdNetOpts.hh

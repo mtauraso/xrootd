@@ -1,4 +1,4 @@
-target_sources(XrdUtils
+target_sources(XrdUtils-objects
   PRIVATE
     XrdRmc.cc      XrdRmc.hh
     XrdRmcData.cc  XrdRmcData.hh

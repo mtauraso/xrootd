@@ -1,4 +1,4 @@
-target_sources(XrdUtils
+target_sources(XrdUtils-objects
   PRIVATE
     XrdCksAssist.cc      XrdCksAssist.hh
     XrdCksCalccrc32.cc   XrdCksCalccrc32.hh

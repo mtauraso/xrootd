@@ -1,7 +1,7 @@
 set(XrdSec     XrdSec-${PLUGIN_VERSION})
 set(XrdSecProt XrdSecProt-${PLUGIN_VERSION})
 
-target_sources(XrdUtils
+target_sources(XrdUtils-objects
   PRIVATE
     XrdSecEntity.cc        XrdSecEntity.hh
     XrdSecEntityAttr.cc    XrdSecEntityAttr.hh

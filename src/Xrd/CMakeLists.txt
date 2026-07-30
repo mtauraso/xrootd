@@ -1,4 +1,4 @@
-target_sources(XrdUtils
+target_sources(XrdUtils-objects
   PRIVATE
     XrdBuffer.cc     XrdBuffer.hh
     XrdBuffXL.cc     XrdBuffXL.hh

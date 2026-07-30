@@ -1,4 +1,4 @@
-target_sources(XrdUtils
+target_sources(XrdUtils-objects
   PRIVATE
     XrdTls.cc             XrdTls.hh
     XrdTlsContext.cc      XrdTlsContext.hh

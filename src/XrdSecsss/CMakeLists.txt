@@ -1,6 +1,6 @@
 set(XrdSecsss XrdSecsss-${PLUGIN_VERSION})
 
-target_sources(XrdUtils
+target_sources(XrdUtils-objects
   PRIVATE
     XrdSecsssCon.cc  XrdSecsssCon.hh
     XrdSecsssEnt.cc  XrdSecsssEnt.hh
