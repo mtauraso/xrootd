@@ -953,6 +953,15 @@ static int xrootdfs_statfs(const char *path, struct statvfs *stbuf)
  */
 }
 
+static int xrootdfs_flush(const char *path, struct fuse_file_info *fi)
+{
+    int fd = (int) fi->fh;
+    ssize_t rc = XrdFfsWcache_flush(fd);
+    if (rc < 0)
+        return -errno;
+    return 0;
+}
+
 static int xrootdfs_release(const char *path, struct fuse_file_info *fi)
 {
     /* Just a stub.  This method is optional and can safely be left
@@ -1362,6 +1371,7 @@ int main(int argc, char *argv[])
     xrootdfs_oper.read		= xrootdfs_read;
     xrootdfs_oper.write		= xrootdfs_write;
     xrootdfs_oper.statfs	= xrootdfs_statfs;
+    xrootdfs_oper.flush	= xrootdfs_flush;
     xrootdfs_oper.release	= xrootdfs_release;
     xrootdfs_oper.fsync		= xrootdfs_fsync;
     xrootdfs_oper.setxattr	= xrootdfs_setxattr;
