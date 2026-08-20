@@ -102,12 +102,9 @@ bool usingEC = false;
 
 static void* xrootdfs_init(struct fuse_conn_info *conn, struct fuse_config *cfg)
 {
-    (void) conn;
-    /* cfg carries mount-time settings (use_ino, direct_io, etc.) that used
-     * to be set only via command-line/mount options in FUSE 2.x. We don't
-     * need to change any of xrootdfs's prior defaults here, so cfg is left
-     * untouched -- but it must be accepted since FUSE 3.x always passes it.
-     */
+    // 1 MB max_write reduces FUSE context switches for large writes.
+    conn->max_write = 1048576;
+
     (void) cfg;
 
     struct passwd pw, *pwp;
